@@ -18,3 +18,5 @@ private:
 };
 
 #endif
+
+//this file is ok

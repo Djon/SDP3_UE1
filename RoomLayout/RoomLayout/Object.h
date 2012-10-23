@@ -14,3 +14,5 @@ protected:
 };
 
 #endif
+
+//conflict should occur
