@@ -47,11 +47,11 @@
         <classShapeMoniker Id="02459e82-feae-446c-a739-ed79df0fe907" />
       </nodes>
     </associationConnector>
-    <classShape Id="279e0815-8491-41a5-8323-be416e3d1cbd" absoluteBounds="0.875, 5.625, 1.5, 1.2226562251647311" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="279e0815-8491-41a5-8323-be416e3d1cbd" absoluteBounds="0.875, 5.625, 1.5, 1.3479918644825615" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
       <classMoniker Id="09394606-2722-4a63-ac5a-2961db535446" LastKnownName="Wall" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="81965f0e-3dad-4aa8-96fd-c93caa22ad87" absoluteBounds="0.8899999999999999, 6.0150000000000006, 1.4700000000000002, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="1d3f02df-ab9b-4015-8857-dde18538f289" absoluteBounds="0.89, 6.3863281125823654, 1.4700000000000002, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="81965f0e-3dad-4aa8-96fd-c93caa22ad87" absoluteBounds="0.89, 6.14033563931783, 1.4700000000000002, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="1d3f02df-ab9b-4015-8857-dde18538f289" absoluteBounds="0.89, 6.5116637519001959, 1.4700000000000002, 0.36132811258236575" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="34cc3331-2beb-42a8-aca4-19e8e6e9e920" absoluteBounds="2, 3.25, 1.5, 1.2226562251647311" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
@@ -86,7 +86,7 @@
       </nodes>
     </associationConnector>
     <classShape Id="dc97fd90-6727-411e-b95a-d1f39708e4f8" absoluteBounds="3, 5.625, 1.875, 1.3828124701976776" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="fc95eeb0-f905-4c83-9a24-6fcb981f0382" LastKnownName="Entry" />
+      <classMoniker Id="fc95eeb0-f905-4c83-9a24-6fcb981f0382" LastKnownName="Door" />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="4cdf70cf-001d-4b9a-98c9-ec2304d7dd97" absoluteBounds="3.015, 6.015, 1.8450000000000002, 0.52148435761531187" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
         <OperationElementListCompartment Id="2063c818-dfdf-4056-bb43-b8d808ca082a" absoluteBounds="3.015, 6.546484357615312, 1.8450000000000002, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
