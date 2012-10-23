@@ -1,5 +1,3 @@
-//das 
-
 #ifndef OBJECT_H
 #define OBJECT_H
 
@@ -14,5 +12,3 @@ protected:
 };
 
 #endif
-
-//conflict should occur
