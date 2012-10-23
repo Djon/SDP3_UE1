@@ -76,6 +76,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomLayout.cpp" />
+    <ClCompile Include="Side.cpp" />
+    <ClCompile Include="Wall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="Door.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="RoomLayout.h" />
+    <ClInclude Include="Side.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
