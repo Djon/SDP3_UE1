@@ -1,4 +1,4 @@
-//das ist ein test!
+//das 
 
 #ifndef OBJECT_H
 #define OBJECT_H
