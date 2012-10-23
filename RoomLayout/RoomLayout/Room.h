@@ -1,9 +1,8 @@
 #ifndef ROOM_H
 #define ROOM_H
+#include <vector>
 #include "Object.h"
 #include "Side.h"
-
-int const SideNumber = 4;
 
 class Room :
 	public Object
@@ -14,7 +13,7 @@ public:
 	virtual void Print();
 
 private:
-	Side* mSides[SideNumber];
+	std::vector<Side*> mSides;
 };
 
 #endif

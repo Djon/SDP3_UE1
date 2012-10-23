@@ -350,6 +350,37 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="f27d020e-340e-422b-abff-e7f492ce7e65"
+            name="AddRoom"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8e4634da-6e24-4dda-9efa-93d0ee54d006"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6d65e268-24ca-4c86-a522-0ee7313426b1"
+                      LastKnownName="void"
+                      LastKnownLocation="ClassDiagram_UE1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8fb90045-a87f-4abb-b76b-294ac0806d1f"
+                  name="Room*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -439,18 +470,18 @@
               <literalString
                 Id="17870043-c67d-4639-9b5f-1e60c9f2e024"
                 name="Lower"
-                value="4" />
+                value="1" />
             </lowerValueInternal>
             <upperValueInternal>
               <literalString
                 Id="b4a7dde1-711d-4048-8a3d-f1c1586d72c1"
                 name="Upper"
-                value="4" />
+                value="1" />
             </upperValueInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="427297ae-5f1c-4737-b4a1-ea5921c77fa8"
-                LastKnownName="Side*"
+                Id="3ef0604b-35da-4a34-a710-4fdd685d312a"
+                LastKnownName="vector&lt;Side*&gt;"
                 LastKnownLocation="ClassDiagram_UE1.uml" />
             </type_NamedElement>
           </property>
@@ -480,6 +511,37 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="d8183a6d-cffb-420c-a4bf-5964e07d1af9"
+            name="AddSide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="911dcfbf-7105-4b39-a8c5-5b7bce7a5459"
+                  name="Side*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2aeb36d4-750e-4c23-a469-82aaa53f8ba7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4f4de915-6cdd-4e73-afd6-191b6151cdb3"
+                      LastKnownName="bool"
+                      LastKnownLocation="ClassDiagram_UE1.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -490,49 +552,6 @@
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
-        <appliedStereotypesInternal>
-          <stereotypeInstance
-            Id="4342954f-01f7-4abe-b127-764173955ad0"
-            name="class"
-            profile="CSharpProfile">
-            <propertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="d9be279b-22dc-478e-a4d5-a1318d1e0cea">
-                <propertyInstance
-                  Id="42f26e13-ca23-480f-9a69-581a855c5438"
-                  name="ClrAttributes" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="10c4e890-1168-40e2-9dcc-ff10d9c2f7f0">
-                <propertyInstance
-                  Id="50fecade-f237-4f80-9de8-6d8b46dcc159"
-                  name="IsPartial"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="e8f4fe7f-5a9f-4f07-9505-3405dab285c7">
-                <propertyInstance
-                  Id="99015105-ea2b-49d6-9ff5-43967c0e5364"
-                  name="IsStatic"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="db152f42-dbc9-4792-9f9c-d684b9da2481">
-                <propertyInstance
-                  Id="2f801b42-7593-498c-bf17-95efd230ff5f"
-                  name="IsUnsafe"
-                  value="false" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances
-                Id="a6ded38a-f20a-48d7-9090-f903fd518121">
-                <propertyInstance
-                  Id="bf664256-9183-43e5-aa75-14124a6ad61b"
-                  name="PackageVisibility"
-                  value="internal" />
-              </stereotypeInstanceHasPropertyInstances>
-            </propertyInstances>
-          </stereotypeInstance>
-        </appliedStereotypesInternal>
         <generalsInternal>
           <generalization
             Id="b018d57e-f76c-4aa4-9299-8a3e77f0323e"
