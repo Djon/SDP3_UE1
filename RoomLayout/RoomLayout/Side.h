@@ -1,5 +1,6 @@
 #ifndef SIDE_H
 #define SIDE_H
+
 #include "Direction.h"
 #include "Object.h"
 
@@ -9,9 +10,12 @@ class Side :
 public:
 	Side();
 	virtual ~Side();
-	virtual void Print() = 0;
+	//virtual void Print() = 0;
+	Direction getDirection();
+	bool IsDoor();
 
-private:
+protected:
+	bool mIsDoor;
 	Direction mDirection;
 };
 

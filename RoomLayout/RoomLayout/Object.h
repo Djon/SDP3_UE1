@@ -4,9 +4,9 @@
 class Object
 {
 public:
-	virtual ~Object();
+	virtual ~Object(){};
 protected:
-	Object();
+	Object(){};
 };
 
 #endif

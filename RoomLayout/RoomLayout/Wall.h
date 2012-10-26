@@ -8,8 +8,9 @@ class Wall :
 {
 public:
 	Wall();
+	Wall(std::string color, Direction direction);
 	virtual ~Wall();
-	virtual void Print();
+	//virtual void Print();
 
 private:
 	std::string mColor;

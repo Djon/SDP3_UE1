@@ -8,9 +8,9 @@ class Door :
 	public Side
 {
 public:
-	Door();
+	Door(bool isOpen, Direction direction);
 	virtual ~Door();
-	virtual void Print();
+	//virtual void Print();
 
 private:
 	bool mIsOpen;

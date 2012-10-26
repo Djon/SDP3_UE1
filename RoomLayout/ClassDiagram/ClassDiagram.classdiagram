@@ -398,10 +398,16 @@
           </generalization>
         </generalsInternal>
         <ownedAttributesInternal>
-          <property Id="f0a4c0e9-9382-4bca-aeff-4d9fec7a604b" name="mDirection" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="f0a4c0e9-9382-4bca-aeff-4d9fec7a604b" name="mDirection" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="24229c98-d56e-44c6-a7e6-5398ae82f9e7" />
             <type_NamedElement>
               <referencedTypeMoniker Id="3bbd1729-c007-4bce-8ce0-0f29619946df" LastKnownName="Direction" />
+            </type_NamedElement>
+          </property>
+          <property Id="34b78200-c89e-45d4-97aa-f89202a0f338" name="mIsDoor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7077cbdb-4c24-4d52-92a2-9d2a5046ea14" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ef643ad5-0dbb-4ff1-970e-ddda76ec040b" LastKnownName="bool" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -562,6 +568,11 @@
     <packageHasNamedElement>
       <referencedType Id="3097f0fa-621e-48a8-8cba-dc44dbcf566d" name="vector&lt;Side*&gt;" isAbstract="false" isLeaf="false" cachedFullName="vector&lt;Side*&gt;">
         <elementDefinition Id="3ef0604b-35da-4a34-a710-4fdd685d312a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ef643ad5-0dbb-4ff1-970e-ddda76ec040b" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="4f4de915-6cdd-4e73-afd6-191b6151cdb3" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

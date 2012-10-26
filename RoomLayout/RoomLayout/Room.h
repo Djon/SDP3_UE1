@@ -1,8 +1,15 @@
 #ifndef ROOM_H
 #define ROOM_H
+
 #include <vector>
+
 #include "Object.h"
 #include "Side.h"
+#include "RoomLayout.h"
+
+int const maxWalls = 4;
+typedef std::vector<Side*> TVec;
+typedef TVec::const_iterator TVecItor;
 
 class Room :
 	public Object
@@ -10,10 +17,11 @@ class Room :
 public:
 	Room();
 	virtual ~Room();
-	virtual void Print();
-	bool AddSide(Side*);
+	void Print(/*bool & wasDoor*/);
+	bool AddSide(Side* side);
 
 private:
+	//Definition: bestimmte Reihenfolge von Himmelsrichtungen: N, W, O, S
 	std::vector<Side*> mSides;
 };
 

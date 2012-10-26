@@ -1,5 +1,6 @@
 #ifndef ROOMLAYOUT_H
 #define ROOMLAYOUT_H
+
 #include <list>
 #include "Object.h"
 #include "Room.h"
@@ -10,11 +11,13 @@ class RoomLayout :
 public:
 	RoomLayout();
 	virtual ~RoomLayout();
-	virtual void Print();
+	void Print();
 	void AddRoom(Room* room);
 
 private:
 	std::list<Room*> mRooms;
+	//bool mWasDoor;
+	void PrintRoom(Room* room);
 };
 
 #endif

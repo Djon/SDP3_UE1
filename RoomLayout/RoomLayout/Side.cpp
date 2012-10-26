@@ -8,7 +8,13 @@ Side::~Side()
 {
 }
 
-void Side::Print() 
+Direction Side::getDirection()
 {
-	
+	return mDirection;
 }
+
+bool Side::IsDoor()
+{
+	return mIsDoor;
+}
+

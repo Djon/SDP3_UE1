@@ -738,6 +738,13 @@
               LastKnownName="Direction"
               LastKnownLocation="ClassDiagram_UE1.uml" />
           </dependency>
+          <dependency
+            Id="996c28f6-6e0f-4991-acda-b5c784431d52">
+            <enumerationMoniker
+              Id="ca1c6cbc-f228-437b-8a3c-d8391d987e68"
+              LastKnownName="SideType"
+              LastKnownLocation="ClassDiagram_UE1.uml" />
+          </dependency>
         </suppliersInternal>
         <generalsInternal>
           <generalization
@@ -753,7 +760,7 @@
           <property
             Id="24229c98-d56e-44c6-a7e6-5398ae82f9e7"
             name="mDirection"
-            visibility="Private"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -766,6 +773,25 @@
               <undefinedTypeMoniker
                 Id="b8014a04-0bce-4b9e-bb3c-1cec944c8bcb"
                 LastKnownName="Direction"
+                LastKnownLocation="ClassDiagram_UE1.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7077cbdb-4c24-4d52-92a2-9d2a5046ea14"
+            name="mIsDoor"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4f4de915-6cdd-4e73-afd6-191b6151cdb3"
+                LastKnownName="bool"
                 LastKnownLocation="ClassDiagram_UE1.uml" />
             </type_NamedElement>
           </property>
@@ -1029,6 +1055,22 @@
       <undefinedType
         Id="427297ae-5f1c-4737-b4a1-ea5921c77fa8"
         name="Side*" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="ca1c6cbc-f228-437b-8a3c-d8391d987e68"
+        name="SideType"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="a33f374e-f220-4ff1-b27a-ce12abce3aa4"
+            name="Wall" />
+          <enumerationLiteral
+            Id="a2dde386-f21f-4e11-8573-3d4d09a8ad40"
+            name="Door" />
+        </ownedLiterals>
+      </enumeration>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
