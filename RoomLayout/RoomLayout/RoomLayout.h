@@ -11,6 +11,7 @@ public:
 	RoomLayout();
 	virtual ~RoomLayout();
 	virtual void Print();
+	void AddRoom(Room*);
 
 private:
 	std::list<Room*> mRooms;

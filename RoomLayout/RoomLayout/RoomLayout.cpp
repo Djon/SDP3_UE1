@@ -13,3 +13,8 @@ void RoomLayout::Print()
 {
 
 }
+
+void RoomLayout::AddRoom(Room*)
+{
+
+}

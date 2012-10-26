@@ -77,7 +77,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Door.cpp" />
-    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="RoomLayout.cpp" />
     <ClCompile Include="Side.cpp" />

@@ -11,6 +11,7 @@ public:
 	Room();
 	virtual ~Room();
 	virtual void Print();
+	bool AddSide(Side*);
 
 private:
 	std::vector<Side*> mSides;

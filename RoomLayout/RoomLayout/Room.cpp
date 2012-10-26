@@ -11,3 +11,8 @@ Room::~Room()
 void Room::Print() 
 {	
 }
+
+bool Room::AddSide(Side*)
+{
+
+}
