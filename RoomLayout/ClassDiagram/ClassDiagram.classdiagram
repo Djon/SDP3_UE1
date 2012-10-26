@@ -132,7 +132,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="004bcfa7-a52d-42a5-ac7f-362d8e409e49" name="Print" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="004bcfa7-a52d-42a5-ac7f-362d8e409e49" name="Print" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="57ad4af8-a2a5-4f13-bc28-a34e8794e121" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -222,7 +222,7 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="a6a4d30a-8ebb-49aa-845c-3d27184b98eb" name="Print" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="a6a4d30a-8ebb-49aa-845c-3d27184b98eb" name="Print" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="566f4759-a1f9-4d8b-aae1-c110545d1094" />
             <ownedParameters>
               <operationHasOwnedParameters>

@@ -331,7 +331,7 @@
             name="Print"
             isLeaf="false"
             isStatic="false"
-            isAbstract="false"
+            isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
@@ -492,7 +492,7 @@
             name="Print"
             isLeaf="false"
             isStatic="false"
-            isAbstract="false"
+            isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
