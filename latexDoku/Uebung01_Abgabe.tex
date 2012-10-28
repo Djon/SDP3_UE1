@@ -1,0 +1,274 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{textcomp}
+
+\usepackage{geometry}
+\geometry{a4paper,left=25mm,right=25mm, top=2cm, bottom=2cm} 
+
+\usepackage{verbatim}
+
+ \usepackage{mathptmx}
+ \usepackage[scaled=.90]{helvet}
+ \usepackage{courier}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\pagestyle{empty}
+\lstset{numbers=left,language=C++}
+\lstset{showstringspaces=false,
+basicstyle=\ttfamily\footnotesize,
+breaklines=true,
+tabsize=3,
+commentstyle=\color{dkgreen},       % comment style
+}
+
+%keine einrückungen bei absatz
+\parindent 0pt
+
+\begin{document}
+\title{Übung 10}
+\author{Johannes Selymes}
+\date{Juni 2012}
+
+\normalsize
+
+%Pfad zu c++ Dateien
+\newcommand{\CodePath}{../../Raumplan/Raumplan/}
+
+%Beginn des Dokuments
+\section{Organisatorisches}
+
+\subsection{Team}
+	\begin {itemize} 
+		\item Patrick Felixberger, s1110306005 
+		\item Johannes Selymes, s1110306025
+	\end {itemize}
+
+\subsection{Aufteilung}
+	\begin {itemize} 
+		\item Patrick Felixberger
+			\begin {itemize}
+				\item Planung
+				\item Implementierung und Testen der Klassen Room, Roomplan
+				\item Klassendiagramm				
+			\end {itemize}
+		\item Johannes Selymes
+			\begin {itemize}
+				\item Planung
+				\item Implementierung und Testen der Klassen Side, Wall, Entry
+				\item Dokumentation				
+			\end {itemize}
+	\end {itemize}
+
+
+\subsection{Aufwand}
+	\begin {itemize}
+		\item geschätzt: 12h
+		\item tatsächlich: Johannes (5h), Patrick  (6h)
+
+	\end {itemize}
+
+
+\section{Systemspezifikation}
+Es soll eine Software für die Verwaltung von Räumen erstellt werden. Es soll einen Raumplan geben, der mehrere Räume beinhalten kann. Die Räume werden in dem Raumplan nur
+vertikal angeordnet, jeder Raum hat also maximal 2 Nachbarn. Jeder Raum hat 4 Seiten die jeweils eine Wand oder ein Durchgang sein können. Wenn zwei Räume aneinander grenzen 
+müssen die angrenzenden Seiten den gleichen Typ haben. Eine Wand hat eine Farbe; ein Durchgang ist offen oder zu und gibt die angrenzenden Räume bekannt. \\
+Der Raumplan kann Räume hinzufügen, sie aber nicht mehr entfernen. Wenn ein Raum nicht passend ist (aufgrund falsches Seiten Typs) wird er nicht hinzugefügt und
+es wird ein Fehler ausgegeben. 
+Der Raumplan kann auch alle Räume angeordnet ausdrucken. \\
+
+
+\newpage
+\section {Systementwurf}
+\subsection {Klassendiagramm}
+...
+\subsection {Komponentenübersicht}
+\begin {itemize} 
+	\item Klasse Roomplan:
+	Verwaltet mehrere Rooms und kann diese mit Print() ausgeben.
+	\item Klasse Room:
+	Enthält Zeiger auf vier Sides , die jeweils Wall oder Entry sein können
+	\item Klasse Side:
+	Abstrakte Basisklasse für Wall und Entry
+	\item Klasse Wall: 
+	Enthält einen Member der die Farbe speichert
+	\item Klasse Entry: 
+	Enthält Zustand (offen, geschlossen) und Id der angrenzenden Räume
+
+\end {itemize}
+
+\newpage
+\section {Komponentenentwurf}
+\subsection {Klasse Objekt}
+Basis aller Basisklassen. Enthält einen virtuellen Destruktor und die enum Typen: 
+\begin {itemize}
+	\item Typ -
+	Entweder WALL oder ENTRY
+	\item Colour -
+	Verschiedene Farben: WHITE, GREEN, BLUE, RED
+	\item Dir -
+	Enthält Himmelsrichtungen: NORTH, SOUTH, EAST, WEST
+\end {itemize}
+
+
+\subsection {Klasse Roomplan}
+Klasse zu Verwaltung aller Räume. Enthält einen Vector der alle Räume speichert und einen Zähler der mit zählt wie viele Räume schon erstellt wurden. IDs der Räume beginnen bei 0. \\
+
+\textbf {Methoden:} 
+
+\textbf {void Print() const} \\
+Diese Funktion gibt die enthaltenen Räume untereinander aus. Für Wände werden Sternchen ausgegeben und für Durchgänge Sternchen mit DD dazwischen. Wenn zwei Durchgänge aneinanderschließen, wird nur einer ausgegeben.\\
+
+
+\textbf {void Roomplan::Add(Typ n, Typ s, Typ e, Typ w, Colour const \& col, bool open)} \\
+Diese Funktion bekommt die Typen der vier Wände übergeben. Es wird überprüft, ob der Raum angefügt werden kann. Wenn dies möglich ist, wird der Raum mittels push\_back in den vector eingefügt, sonst wird ein Fehler auf die Konsole ausgegeben. Bei dieser Funktion haben alle Wände die gleiche Farbe und die Durchgänge sind alle offen oder geschlossen. \\
+
+\textbf {void Roomplan::Add(Side* NS, Side* SS, Side* ES, Side* WS)} \\
+Diese Funktion bekommt die fertigen Side* Objekte übergeben, die entweder Wall oder Entry sein können. Es wird auch wieder überprüft, ob der Raum zum darüberliegenden passt. \\
+
+\textbf {int GetCounter () const} \\
+Diese Funktion gibt den derzeitigen Raumzähler zurück. Der Raumzähler zählt mit wieviele Räume schon erstellt wurden. \\
+
+%Printinfo fehlt
+
+\subsection {Klasse Room}
+Klasse die vier Zeiger auf Side (bzw. Wall oder Entry) hat, die die Seiten des Raumes darstellen. Hat auch einen Memeber mId welcher die Id des Raums angibt.\\
+
+\textbf {Konstruktoren:} \\ 
+\textbf {Room(Typ n, Typ s, Typ e, Typ w, size\_t id, Colour const \&col, bool const \&open)} \\
+Dieser Konstruktor bekommt die Typen der vier Wände, die Id, die Farbe für alle Wände und den Zustand der Durchgänge.
+Je nach dem ob die Seite eine Wand oder ein Durchgang ist, wird die entsprechende mit new erstellt. \\
+
+\textbf {Room::Room(Side* NS, Side* SS, Side* ES, Side* WS, size\_t id)} \\
+Hier werden die Seiten als Zeiger übergeben. Hier müssen die Objekte, die hinter den Zeigern stehen, kopiert werden. Das wird mithilfe der Funktion Clone() erreicht, welche bei der Klasse Side, Wall und Entry noch genauer erklärt wird. Wenn man die Zeiger einfach normal zuweisen würde, wäre es eine shallow-copy. \\
+
+\textbf {Copy Konstruktor:} \\
+\textbf {Room::Room (Room const\& room)} \\
+Hier werden die Zeiger auf die Side* Objekte auch mittels Clone kopiert. \\
+
+\textbf {Destruktor:} \\
+Löscht die Zeiger auf die Seiten und setzt sie zu 0.\\
+
+
+\textbf {Get Methoden:} \\
+Die Get...Wall() Methoden geben den Typ der jeweiligen Seite zurück. \\
+Die Funktion GetRoomId() gibt die Id zurück. \\
+
+\textbf {void Room::PrintRoomInfo () const} \\
+Diese Funktion gibt die Id und die Information der einzelnen Seiten aus. Ruft PrintInfo() von Side auf, welches dort näher beschrieben wird. \\
+
+
+
+\subsection {Klasse Side} 
+Die Klasse Side ist eine abstrakte Basisklasse für die Klassen Wall und Entry. Enthält nur pure-virtual Funktion, kann also auch nicht implementiert werden. \\
+
+\textbf {Konstruktoren:} \\
+\textbf {Side () \{\}} \\
+Default Konstruktor. \\
+\textbf {Side (Typ typ) : mTyp(typ) \{\}} \\
+Direktes Zuweisen des Typs. \\
+\textbf {pure virtual Methoden:} \\
+virtual Typ GetTyp () const = 0; \\
+Gibt Typ der Seite zurück (WALL/ENTRY). \\
+virtual void PrintInfo () const = 0; \\
+Gibt Infos über die abgeleitete Klasse aus. \\
+virtual Side *Clone() = 0; \\
+Klont die abgeleitete Klasse. \\
+
+\subsection {Klasse Wall} 
+Die Klasse Wall repräsentiert eine Wand. Ist abgeleitet von Side und implementiert dessen Methoden. \\
+
+\textbf {Konstruktoren:} \\
+\textbf {Wall () : mColour(WHITE), Side(WALL) \{\}}\\
+Default Konstruktor.\\
+\textbf {Wall (Colour col) : mColour(col), Side(WALL) \{\}} \\
+Konstruktor der die Farbe übergeben bekommt und diese richtig setzt. \\
+\textbf {Wall (Wall const\& wall)} \\
+Copy - Konstuktor. Kopiert Typ und Colour vom übergebenen Objekt. \\
+\textbf {Get Methoden:} \\
+GetTyp () gibt Typ zurück. \\
+GetCoulour () gibt Farbe zurück. \\
+PrintInfo () gibt Typ und Farbe auf der Konsole aus. \\
+\textbf {Clone Methode:} \\
+Wird verwendet um ein Objekt der Klasse Wall zu kopieren. Erstellt eine neues Objekt Wall und gibt den Zeiger darauf zurück. \\
+
+
+
+\subsection {Klasse Entry} 
+Die Klasse Entry repräsentiert einen Durchgang. Ist abgeleitet von Side und implementiert dessen Methoden. \\
+\textbf {Konstruktoren:} \\
+\textbf {Entry (int currentId, bool opened, Dir const\& dir)} \\
+Dieser Konstruktor bekommt die derzeitige Id des Raumplans, ob der Durchgang geöffnet ist und die Richtung übergeben. \\
+Typ, Id und Opened werden entsprechend gesetzt. Wenn der Durchgang nach Norden zeigt, wird die Id des angrenzenden Raums auf id - 1 gesetzt, wenn er nach Süden zeigt auf id + 1 und sonst auf -1 also der Durchgang geht nach aussen. \\
+\textbf {Entry::Entry (Entry const\& entry)} \\
+Copy Konstruktor: Kopiert Member vom übergebenen Objekt. \\
+\textbf {Get Methoden und Print} \\
+	Typ GetTyp () const; \\
+	bool IsOpened () const; \\
+	int GetMyRoomId () const; \\
+	int GetOtherRoomId () const; \\
+	void PrintInfo () const; \\
+Geben die  jeweiligen Informationen zurück bzw. druckt sie auf der Konsole aus. \\
+\textbf {Clone Methode:} \\
+Wird verwendet um ein Objekt der Klasse Entry zu kopieren. Erstellt eine neues Objekt Entry und gibt den Zeiger darauf zurück. \\
+
+
+
+\newpage
+\section {Testprotokollierung} 
+
+
+\newpage
+\section {Source Code}
+
+
+\lstinputlisting[language=C++]{\CodePath Roomplan.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath Roomplan.cpp}
+
+\newpage
+\lstinputlisting[language=C++]{\CodePath Room.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath Room.cpp}
+
+\newpage
+\lstinputlisting[language=C++]{\CodePath Side.h}
+
+\newpage
+\lstinputlisting[language=C++]{\CodePath Wall.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath Wall.cpp}
+
+\newpage
+\lstinputlisting[language=C++]{\CodePath Entry.h}
+\newpage
+\lstinputlisting[language=C++]{\CodePath Entry.cpp}
+
+\newpage
+\lstinputlisting[language=C++]{\CodePath main.cpp}
+
+
+
+
+
+\newpage
+\section {Testausgaben} 
+
+\begin {verbatim}
+
+\end {verbatim}
+
+
+
+
+
+
+\end{document}
