@@ -19,6 +19,7 @@ public:
 
 private:
 	Rooms mRooms;
+	Room* prevRoom;
 	bool mWasDoor;
 
 	void PrintRoom(Room* room, bool WasDoor);

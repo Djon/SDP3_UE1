@@ -1,5 +1,6 @@
 #include "Side.h"
 
+
 Side::Side()
 {
 }
@@ -17,4 +18,3 @@ bool Side::IsDoor()
 {
 	return mIsDoor;
 }
-

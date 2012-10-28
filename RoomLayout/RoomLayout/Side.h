@@ -4,14 +4,16 @@
 #include "Direction.h"
 #include "Object.h"
 
+
 class Side :
 	public Object
 {
 public:
 	Side();
 	virtual ~Side();
-	Direction getDirection();
+
 	bool IsDoor();
+	Direction getDirection();
 
 protected:
 	bool mIsDoor;

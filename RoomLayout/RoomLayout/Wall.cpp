@@ -1,5 +1,6 @@
-#include "Wall.h"
 #include <iostream>
+#include "Wall.h"
+
 
 Wall::Wall(std::string color, Direction direction)
 {

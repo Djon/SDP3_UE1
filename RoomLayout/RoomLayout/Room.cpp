@@ -1,9 +1,11 @@
-#include "Room.h"
 #include <algorithm>
 #include <iterator>
 #include <vector>
 #include <iostream>
 #include <string>
+#include "Room.h"
+#include "Door.h"
+
 
 Room::Room()
 {
@@ -22,7 +24,7 @@ Room::~Room()
 
 void Room::PrintWallOrDoorNS(Side* side) 
 {
-	if (side->IsDoor() == false)
+	if (!side->IsDoor())
 	{
 		std::cout << WallString_N << std::endl;
 	}
@@ -34,7 +36,7 @@ void Room::PrintWallOrDoorNS(Side* side)
 
 void Room::PrintWallOrDoorOW(Side* side) 
 {
-	if (side->IsDoor() == false)
+	if (!side->IsDoor())
 	{
 		std::cout << WallSign;
 	}
@@ -119,6 +121,11 @@ bool Room::AddSide(Side* side)
 		//Sorts the Sides
 		std::sort(mSides.begin(),mSides.end(),CheckSideOrder);
 
+		if (side->IsDoor())
+		{			
+			AddRoomToDoor(side);
+		}
+
 		return true;
 	}
 	return false;
@@ -132,4 +139,20 @@ bool Room::IsNorthDoor()
 bool Room::IsSouthDoor()
 {
 	return mSides[MaxWalls-1]->IsDoor();
+}
+
+void Room::AddRoomToDoor(Side* side)
+{
+	Door* door = dynamic_cast<Door*>(side);
+	door->AddRoom(this);
+}
+
+Side* Room::GetNorthSide()
+{
+	return mSides[0];
+}
+
+Side* Room::GetSouthSide()
+{
+	return mSides[MaxWalls-1];
 }

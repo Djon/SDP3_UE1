@@ -1,7 +1,9 @@
 #ifndef WALL_H
 #define WALL_H
+
 #include <string>
 #include "Side.h"
+
 
 class Wall :
 	public Side

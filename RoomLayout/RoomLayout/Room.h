@@ -6,6 +6,7 @@
 #include "Object.h"
 #include "Side.h"
 
+
 typedef std::vector<Side*> TVec;
 typedef TVec::const_iterator TVecItor;
 
@@ -23,10 +24,17 @@ class Room :
 public:
 	Room();
 	virtual ~Room();
+
 	void Print(bool WasDoor);
+
 	bool AddSide(Side* side);
+	void AddRoomToDoor(Side* door);
+
 	bool IsNorthDoor();
 	bool IsSouthDoor();
+
+	Side* GetNorthSide();
+	Side* GetSouthSide();	
 
 private:
 	std::vector<Side*> mSides;

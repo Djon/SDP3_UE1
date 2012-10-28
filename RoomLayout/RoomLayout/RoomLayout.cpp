@@ -3,6 +3,7 @@
 #include <iterator>
 #include "RoomLayout.h"
 
+
 RoomLayout::RoomLayout()
 	: mWasDoor(false)
 {
@@ -40,7 +41,18 @@ bool RoomLayout::AddRoom(Room* room)
 	if (mWasDoor == room->IsNorthDoor() || mRooms.empty())
 	{
 		mRooms.push_back(room);
+
+		if (mWasDoor)
+		{
+			Side* CurrentDoor = room->GetNorthSide();
+			Side* PrevDoor = prevRoom->GetSouthSide();
+
+			prevRoom->AddRoomToDoor(CurrentDoor);
+			room->AddRoomToDoor(PrevDoor);
+		}
+
 		mWasDoor = room->IsSouthDoor();
+		prevRoom = room;
 		return true;
 	}
 	return false;
