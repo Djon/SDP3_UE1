@@ -11,15 +11,3 @@ Wall::Wall(std::string color, Direction direction)
 Wall::~Wall()
 {
 }
-
-//void Wall::Print() 
-//{	
-//	if (mDirection == North) 
-//	{ 
-//		std::cout << "*********" << std::endl;
-//	}
-//	else if (mDirection == West)
-//	{
-//		std::cout << "*********" << std::endl;
-//	}
-//}

@@ -5,6 +5,9 @@
 #include "Object.h"
 #include "Room.h"
 
+typedef std::list<Room*> Rooms;
+typedef Rooms::const_iterator RoomsItor;
+
 class RoomLayout :
 	public Object
 {
@@ -12,13 +15,13 @@ public:
 	RoomLayout();
 	virtual ~RoomLayout();
 	void Print();
-	void AddRoom(Room* room);
+	bool AddRoom(Room* room);
 
 private:
-	typedef std::list<Room*> Rooms;
-	typedef Rooms::const_iterator RoomsItor;
-	std::list<Room*> mRooms;
-	void PrintRoom(Room* room);
+	Rooms mRooms;
+	bool mWasDoor;
+
+	void PrintRoom(Room* room, bool WasDoor);
 };
 
 #endif

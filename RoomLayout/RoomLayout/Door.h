@@ -4,15 +4,17 @@
 #include "Side.h"
 #include "Room.h"
 
+int const MaxRooms = 2;
+
 class Door :
 	public Side
 {
 public:
 	Door(bool isOpen, Direction direction);
 	virtual ~Door();
-	//virtual void Print();
+	bool AddRoom(Room* room);
 
-private:
+private:	
 	bool mIsOpen;
 	std::vector<Room*> mRooms;
 };

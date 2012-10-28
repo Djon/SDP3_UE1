@@ -4,9 +4,9 @@
 enum Direction
 {
 	North,
+	West,
 	East,
-	South,
-	West
+	South	
 };
 
 #endif

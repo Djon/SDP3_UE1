@@ -11,166 +11,125 @@ Room::Room()
 
 Room::~Room()
 {
-}
+	TVecItor itor = mSides.begin();
 
-//void PrintSide(Side* side)
-//{
-//	side->Print();
-//}
-
-//
-//void PrintNorth(TVec const& sides)
-//{
-//	TVecItor itor = sides.begin();
-//	for (;itor < sides.end(); ++itor)
-//	{
-//		if (((*itor)->getDirection == North) || ((*itor)->getDirection == South))
-//		{
-//			PrintWallOrDoor((*itor));
-//		}
-//		else
-//		{
-//			std::cout << "*       *" << std::endl;
-//		if 
-//			std::cout << "*       *" << std::endl;
-//		}
-//		
-//	}
-//}
-//
-void PrintWallOrDoorNS(Side* side/*, bool & wasDoor*/) 
-{
-	/*if (!wasDoor)
-	{*/
-		if (side->IsDoor() == false)
-		{
-			std::cout << "*********" << std::endl;
-		}
-		else
-		{
-			std::cout << "****D****" << std::endl;
-			/*wasDoor = true;*/
-		}
-	/*}
-	else 
+	while (itor != mSides.end())
 	{
-		wasDoor = false;
-	}*/
+		delete (*itor);
+		++itor;
+	}
 }
 
-void PrintWallOrDoorOW(Side* side) 
+void Room::PrintWallOrDoorNS(Side* side) 
 {
 	if (side->IsDoor() == false)
 	{
-		std::cout << "*";
+		std::cout << WallString_N << std::endl;
 	}
 	else
 	{
-		std::cout << "D";
+		std::cout << DoorString_N << std::endl;
 	}
 }
 
-void PrintTwoStars()
+void Room::PrintWallOrDoorOW(Side* side) 
 {
-	std::cout << "*       *" << std::endl;
-}
-
-void PrintSpaces()
-{
-	std::cout << "       ";
-}
-
-void Room::Print(/*bool & wasDoor*/) 
-{
-	//Wenn Raum nicht vier Seiten hat
-	if (mSides.size() != maxWalls) {
-		std::cout << "zu wenig seiten" << std::endl;
-		return;
+	if (side->IsDoor() == false)
+	{
+		std::cout << WallSign;
 	}
+	else
+	{
+		std::cout << DoorSign;
+	}
+}
 
-	TVecItor itor = mSides.begin();
-
-	//N
-	PrintWallOrDoorNS(*(itor)/*,wasDoor*/);
-	++itor;
-
-	//W+O
-	PrintTwoStars();
-	PrintWallOrDoorOW((*itor));
+void Room::PrintTwoWallParts()
+{
+	std::cout << WallSign;
 	PrintSpaces();
-	++itor;
-	PrintWallOrDoorOW((*itor));
-	std::cout << std::endl;
-	PrintTwoStars();
-	++itor;
-	//S
-	PrintWallOrDoorNS(*(itor)/*,wasDoor*/);
+	std::cout << WallSign << std::endl;
+}
 
+void Room::PrintSpaces()
+{
+	std::cout << SideSpaces;
+}
 
+void Room::Print(bool WasDoor) 
+{
+	try
+	{
+		//Checks if the room has 4 Sides
+		if (mSides.size() != MaxWalls) {
+			throw("Sides are missing");
+		}
 
+		TVecItor itor = mSides.begin();
 
-	/*else
-	{
-	TVecItor itor = mSides.begin();
-	for (;itor < mSides.end(); ++itor)
-	{
-	if((*itor)->getSideType == Wall)
-	{
-	if((*itor)->getDirection == North)
-	{
-	std::cout << "*********" << std::endl;
-	}
-	else if ((*itor)->getDirection == South)
-	{
-	std::cout << "*********" << std::endl;
-	}
-	else if ((*itor)->getDirection == West)
-	{
+		//N
+		if (!WasDoor)
+		{
+			PrintWallOrDoorNS(*(itor));
+		}
+		++itor;
 
-	std::cout << "*
-	}
-	else 
-	{
-	}
-	}
-	else
-	{
-	if((*itor)->getDirection == North)
-	{
-	std::cout << "****D****" << std::endl;
-	}
-	else if ((*itor)->getDirection == South)
-	{
-	std::cout << "****D****" << std::endl;
-	}
-	}
-	}
-	}
+		//W+O
+		PrintTwoWallParts();
+		PrintWallOrDoorOW((*itor));
+		PrintSpaces();
+		++itor;
+		PrintWallOrDoorOW((*itor));
+		std::cout << std::endl;
+		PrintTwoWallParts();
+		++itor;
 
-	std::for_each(mSides.begin(), mSides.end(), PrintSide);*/
+		//S
+		PrintWallOrDoorNS(*(itor));
+	}
+	catch (std::string const& ex)
+	{
+		std::cerr << "Error occured in Room::Print: " << ex << std::endl;
+	}
+	catch (...)
+	{
+		std::cerr << "Unknown Error in Room::Print" << std::endl;
+	}
+}
+
+bool CheckSideOrder(Side* side1, Side* side2)
+{
+	return (side1->getDirection()) < (side2->getDirection());
 }
 
 bool Room::AddSide(Side* side)
 {
-	TVecItor itor = mSides.begin();
-
-	//max. Anzahl der Wände noch nicht erreicht?
-	if (mSides.size() < maxWalls)
+	//checks if max amount of walls have been reached
+	if (mSides.size() < MaxWalls)
 	{
-		//Nur Seiten einfügen, die noch nicht vorhanden sind
-		for (;itor < mSides.end();++itor)
+		//only inserts walls which doesn't already exist
+		for (TVecItor itor = mSides.begin(); itor != mSides.end(); ++itor)
 		{
 			if ((*itor)->getDirection() == side->getDirection())
 			{
 				return false;
 			}
 		}
-		//****************evtl noch reihenfolge überprüfen
 		mSides.push_back(side);
+		//Sorts the Sides
+		std::sort(mSides.begin(),mSides.end(),CheckSideOrder);
+
 		return true;
 	}
-	else
-	{
-		return false;
-	}
+	return false;
+}
+
+bool Room::IsNorthDoor()
+{
+	return mSides[0]->IsDoor();
+}
+
+bool Room::IsSouthDoor()
+{
+	return mSides[MaxWalls-1]->IsDoor();
 }

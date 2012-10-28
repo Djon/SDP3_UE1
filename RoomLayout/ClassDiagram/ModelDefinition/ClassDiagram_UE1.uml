@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="ae8c957e-1101-400b-86d8-c265bc495059"
   name="ClassDiagram_UE1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -609,13 +609,6 @@
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="8c577b9a-1c98-4e1d-b820-743731c299a2">
-                    <propertyInstance
-                      Id="9e3896d6-5afb-42db-87da-66f32928e0c7"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
                     Id="e659cdcc-49e3-4a26-898d-d4f47d346759">
                     <propertyInstance
                       Id="9b6317d4-94bd-4cd6-84c0-571135118c58"
@@ -640,82 +633,6 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="cc1af977-ca14-4e87-aa70-4fd98fd8807e"
-            name="Print"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="d2e8de0c-c740-40ed-9ad7-a55d62a51613"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e548de2a-ecc9-4ee0-b15f-f6404fc4c07c">
-                    <propertyInstance
-                      Id="58e248cd-79f9-4661-925d-99cdf9eec1b9"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="bbf8189f-551e-4e1a-a3e8-c8b9e2b1b26d">
-                    <propertyInstance
-                      Id="fd95d914-7ba1-4618-b624-b7f2853ccb93"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="0e762eda-65cd-44d6-bd7c-abf962bee34a">
-                    <propertyInstance
-                      Id="e67b4bec-50a8-40fb-86bf-020aaef7e806"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7a37c53f-07bc-42aa-9bb6-8548f933e440">
-                    <propertyInstance
-                      Id="5c91ab74-e216-4c48-8946-daa02f1fe617"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6f4327ae-92ed-4fec-b8f5-432c109e22d3">
-                    <propertyInstance
-                      Id="9cb7055f-f56c-4047-b1b7-be920d5ddae4"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="ee47cc43-070a-402e-9349-9f4e49eea4d9">
-                    <propertyInstance
-                      Id="1fe8c2d1-08d3-45e5-ade0-f9434a8d549c"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="de3796f4-2df1-46cb-b1de-b8a2db5725d9"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="6d65e268-24ca-4c86-a522-0ee7313426b1"
-                      LastKnownName="void"
-                      LastKnownLocation="ClassDiagram_UE1.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -796,32 +713,6 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="d69ce4da-fa2d-4aaa-92b8-cb240a4b8f7b"
-            name="Print"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="4c46374c-e3d7-47f6-ad59-512b423fd416"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="f61957fe-2f24-4e18-92c0-e0082c33268f"
-                      LastKnownName="void = 0"
-                      LastKnownLocation="ClassDiagram_UE1.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -933,32 +824,6 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="9fb84813-6b90-4e18-9b90-231ad0137c0d"
-            name="Print"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="5c4a3602-3ebb-43cf-9075-78d9d664b40a"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="6d65e268-24ca-4c86-a522-0ee7313426b1"
-                      LastKnownName="void"
-                      LastKnownLocation="ClassDiagram_UE1.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>

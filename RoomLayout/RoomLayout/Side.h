@@ -10,7 +10,6 @@ class Side :
 public:
 	Side();
 	virtual ~Side();
-	//virtual void Print() = 0;
 	Direction getDirection();
 	bool IsDoor();
 
