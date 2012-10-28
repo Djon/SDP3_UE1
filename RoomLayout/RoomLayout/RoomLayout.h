@@ -15,8 +15,9 @@ public:
 	void AddRoom(Room* room);
 
 private:
+	typedef std::list<Room*> Rooms;
+	typedef Rooms::const_iterator RoomsItor;
 	std::list<Room*> mRooms;
-	//bool mWasDoor;
 	void PrintRoom(Room* room);
 };
 

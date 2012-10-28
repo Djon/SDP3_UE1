@@ -2,10 +2,8 @@
 #define ROOM_H
 
 #include <vector>
-
 #include "Object.h"
 #include "Side.h"
-#include "RoomLayout.h"
 
 int const maxWalls = 4;
 typedef std::vector<Side*> TVec;
@@ -17,7 +15,7 @@ class Room :
 public:
 	Room();
 	virtual ~Room();
-	void Print(/*bool & wasDoor*/);
+	void Print();
 	bool AddSide(Side* side);
 
 private:

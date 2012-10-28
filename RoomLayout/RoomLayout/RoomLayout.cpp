@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <iterator>
 #include "RoomLayout.h"
 
 
@@ -13,12 +14,15 @@ RoomLayout::~RoomLayout()
 
 void RoomLayout::PrintRoom(Room* room)
 {
-	room->Print(/*mWasDoor*/);
+	room->Print();
 }
 
 void RoomLayout::Print() 
 {
-	std::for_each(mRooms.begin(), mRooms.end(), PrintRoom);
+	for (std::list<Room*>::const_iterator first = mRooms.begin() ; first!=mRooms.end(); ++first ) 
+	{
+		PrintRoom(*first);
+	}
 }
 
 void RoomLayout::AddRoom(Room* room)
