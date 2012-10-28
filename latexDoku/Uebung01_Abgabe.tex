@@ -34,62 +34,59 @@ commentstyle=\color{dkgreen},       % comment style
 \parindent 0pt
 
 \begin{document}
-\title{Übung 10}
-\author{Johannes Selymes}
-\date{Juni 2012}
+\title{Übung 1}
+\author{Bernhard Selymes, Reinhard Penn}
+\date{Oktober 2012}
 
 \normalsize
 
 %Pfad zu c++ Dateien
-\newcommand{\CodePath}{../../Raumplan/Raumplan/}
+\newcommand{\CodePath}{../RoomLayout/RoomLayout/}
 
 %Beginn des Dokuments
 \section{Organisatorisches}
 
 \subsection{Team}
 	\begin {itemize} 
-		\item Patrick Felixberger, s1110306005 
-		\item Johannes Selymes, s1110306025
+		\item Reinhard Penn, s1110306019 
+		\item Bernhard Selymes, s1110306024
 	\end {itemize}
 
 \subsection{Aufteilung}
 	\begin {itemize} 
-		\item Patrick Felixberger
+		\item Reinhard Penn
 			\begin {itemize}
 				\item Planung
-				\item Implementierung und Testen der Klassen Room, Roomplan
-				\item Klassendiagramm				
+				\item Klassendiagramm
+				\item Implementierung und Testen der Klassen Side, Wall, Door				
 			\end {itemize}
-		\item Johannes Selymes
+		\item Bernhard Selymes
 			\begin {itemize}
 				\item Planung
-				\item Implementierung und Testen der Klassen Side, Wall, Entry
+				\item Klassendiagramm
+				\item Implementierung und Testen der Klassen Object, Roomlayout, Room
 				\item Dokumentation				
 			\end {itemize}
 	\end {itemize}
 
 
-\subsection{Aufwand}
+\subsection{Zeitaufwand}
 	\begin {itemize}
-		\item geschätzt: 12h
-		\item tatsächlich: Johannes (5h), Patrick  (6h)
+		\item geschätzte Mh: 7h
+		\item tatsächlich: Reinhard (?h), Bernhard  (6h)
 
 	\end {itemize}
 
 
 \section{Systemspezifikation}
-Es soll eine Software für die Verwaltung von Räumen erstellt werden. Es soll einen Raumplan geben, der mehrere Räume beinhalten kann. Die Räume werden in dem Raumplan nur
-vertikal angeordnet, jeder Raum hat also maximal 2 Nachbarn. Jeder Raum hat 4 Seiten die jeweils eine Wand oder ein Durchgang sein können. Wenn zwei Räume aneinander grenzen 
-müssen die angrenzenden Seiten den gleichen Typ haben. Eine Wand hat eine Farbe; ein Durchgang ist offen oder zu und gibt die angrenzenden Räume bekannt. \\
-Der Raumplan kann Räume hinzufügen, sie aber nicht mehr entfernen. Wenn ein Raum nicht passend ist (aufgrund falsches Seiten Typs) wird er nicht hinzugefügt und
-es wird ein Fehler ausgegeben. 
-Der Raumplan kann auch alle Räume angeordnet ausdrucken. \\
+Eine Software für einen Raumplan soll entwickelt werden. Ein Raumplane enthält mehrere Räume, jeder Raum hat 4 Seiten, die wiederum eine Wand oder ein Durchgang sein können. Die Räume sind alle gleich groß und liegen alle untereinander und nicht nebeneinander. Eine Wand hat eine Farbe, ein Durchgang ist offen oder geschlossen und verbindet einen oder zwei Räume - es gibt auch Durchgänge die nach draußen führen. Wenn zwei Durchgänge aufeinander treffen wird nur einer ausgegeben. Bei zwei Wänden werden beide ausgegeben. In der gesamten Datenstruktur können nur Objekte hinzugefügt, aber nicht gelöscht werden. Der gesamte Raumplan kann ausgedruckt werden. \\
 
 
 \newpage
 \section {Systementwurf}
 \subsection {Klassendiagramm}
-...
+%bmp oder pdf einfügen
+%----------------------------------------------- ab da kopiert ------------------------------------------
 \subsection {Komponentenübersicht}
 \begin {itemize} 
 	\item Klasse Roomplan:
@@ -230,30 +227,30 @@ Wird verwendet um ein Objekt der Klasse Entry zu kopieren. Erstellt eine neues O
 \section {Source Code}
 
 
-\lstinputlisting[language=C++]{\CodePath Roomplan.h}
-\newpage
-\lstinputlisting[language=C++]{\CodePath Roomplan.cpp}
-
-\newpage
-\lstinputlisting[language=C++]{\CodePath Room.h}
-\newpage
-\lstinputlisting[language=C++]{\CodePath Room.cpp}
-
-\newpage
-\lstinputlisting[language=C++]{\CodePath Side.h}
-
-\newpage
-\lstinputlisting[language=C++]{\CodePath Wall.h}
-\newpage
-\lstinputlisting[language=C++]{\CodePath Wall.cpp}
-
-\newpage
-\lstinputlisting[language=C++]{\CodePath Entry.h}
-\newpage
-\lstinputlisting[language=C++]{\CodePath Entry.cpp}
-
-\newpage
-\lstinputlisting[language=C++]{\CodePath main.cpp}
+%\lstinputlisting[language=C++]{\CodePath Roomplan.h}
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Roomplan.cpp}
+%
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Room.h}
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Room.cpp}
+%
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Side.h}
+%
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Wall.h}
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Wall.cpp}
+%
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Entry.h}
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath Entry.cpp}
+%
+%\newpage
+%\lstinputlisting[language=C++]{\CodePath main.cpp}
 
 
 
