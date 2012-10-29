@@ -64,19 +64,20 @@ void Room::Print(bool WasDoor)
 	{
 		//Checks if the room has 4 Sides
 		if (mSides.size() != MaxWalls) {
-			throw("Sides are missing");
+			std::string ex("Sides are missing");
+			throw(ex);
 		}
 
 		TVecItor itor = mSides.begin();
 
-		//N
+		//North
 		if (!WasDoor)
 		{
 			PrintWallOrDoorNS(*(itor));
 		}
 		++itor;
 
-		//W+O
+		//West+East
 		PrintTwoWallParts();
 		PrintWallOrDoorOW((*itor));
 		PrintSpaces();
@@ -86,7 +87,7 @@ void Room::Print(bool WasDoor)
 		PrintTwoWallParts();
 		++itor;
 
-		//S
+		//South
 		PrintWallOrDoorNS(*(itor));
 	}
 	catch (std::string const& ex)
@@ -106,9 +107,14 @@ bool CheckSideOrder(Side* side1, Side* side2)
 
 bool Room::AddSide(Side* side)
 {
-	//checks if max amount of walls have been reached
-	if (mSides.size() < MaxWalls)
+	try
 	{
+		//checks if max amount of walls have been reached
+		if (mSides.size() >= MaxWalls)
+		{
+			std::string ex("Max amount of walls already reached");
+			throw(ex);
+		}
 		//only inserts walls which doesn't already exist
 		for (TVecItor itor = mSides.begin(); itor != mSides.end(); ++itor)
 		{
@@ -125,10 +131,18 @@ bool Room::AddSide(Side* side)
 		{			
 			AddRoomToDoor(side);
 		}
-
 		return true;
 	}
-	return false;
+	catch (std::string const& ex)
+	{
+		std::cerr << "Error occured in Room::AddSide: " << ex << std::endl;
+		return false;
+	}
+	catch (...)
+	{
+		std::cerr << "Unknown Error in Room::AddSide" << std::endl;
+		return false;
+	}
 }
 
 bool Room::IsNorthDoor()
@@ -155,4 +169,9 @@ Side* Room::GetNorthSide()
 Side* Room::GetSouthSide()
 {
 	return mSides[MaxWalls-1];
+}
+
+bool Room::IsFull()
+{
+	return mSides.size() == MaxWalls;
 }

@@ -30,6 +30,7 @@ public:
 	bool AddSide(Side* side);
 	void AddRoomToDoor(Side* door);
 
+	bool IsFull();
 	bool IsNorthDoor();
 	bool IsSouthDoor();
 

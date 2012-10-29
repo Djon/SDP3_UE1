@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+#include <string>
 #include "RoomLayout.h"
 
 
@@ -38,22 +39,40 @@ void RoomLayout::Print()
 
 bool RoomLayout::AddRoom(Room* room)
 {
-	if (mWasDoor == room->IsNorthDoor() || mRooms.empty())
+	try 
 	{
-		mRooms.push_back(room);
-
-		if (mWasDoor)
+		if (!room->IsFull())
 		{
-			Side* CurrentDoor = room->GetNorthSide();
-			Side* PrevDoor = prevRoom->GetSouthSide();
-
-			prevRoom->AddRoomToDoor(CurrentDoor);
-			room->AddRoomToDoor(PrevDoor);
+			std::string ex("Room is not full");
+			throw(ex);
 		}
+		if (mRooms.empty() || mWasDoor == room->IsNorthDoor())
+		{
+			mRooms.push_back(room);
 
-		mWasDoor = room->IsSouthDoor();
-		prevRoom = room;
-		return true;
+			if (mWasDoor)
+			{
+				Side* CurrentDoor = room->GetNorthSide();
+				Side* PrevDoor = prevRoom->GetSouthSide();
+
+				prevRoom->AddRoomToDoor(CurrentDoor);
+				room->AddRoomToDoor(PrevDoor);
+			}
+
+			mWasDoor = room->IsSouthDoor();
+			prevRoom = room;
+			return true;
+		}
+		return false;
 	}
-	return false;
+	catch (std::string const& ex)
+	{
+		std::cerr << "Error occured in RoomLayout::AddRoom: " << ex << std::endl;
+		return false;
+	}
+	catch (...)
+	{
+		std::cerr << "Unknown Error in RoomLayout::AddRoom" << std::endl;
+		return false;
+	}
 }
