@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : Room.h
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 29.10.2012
+// Description : Header for Room.cpp
+// Remarks : -
+// Revision : 0
+///////////////////////////////////////////////////////////////////////////
+
+
 #ifndef ROOM_H
 #define ROOM_H
 
@@ -22,28 +32,43 @@ class Room :
 	public Object
 {
 public:
+	//Default CTor
 	Room();
+
+	//virtual destructor
 	virtual ~Room();
 
-	void Print(bool WasDoor);
+	//Prints the four sides of the room
+	void Print(bool WasDoor) const;
 
+	//Adds a side to the room
 	bool AddSide(Side* side);
+	//Adds this room to a certain door
 	void AddRoomToDoor(Side* door);
 
-	bool IsFull();
-	bool IsNorthDoor();
-	bool IsSouthDoor();
+	//Checks if the room has reached the max amount of walls
+	bool IsFull() const;
+	//Checks if the north side is a door
+	bool IsNorthDoor() const;
+	//Checks if the south side is a door 
+	bool IsSouthDoor() const;
 
-	Side* GetNorthSide();
-	Side* GetSouthSide();	
+	//Returns the north side
+	Side* GetNorthSide() const;
+	//Returns the south side
+	Side* GetSouthSide() const;	
 
 private:
 	std::vector<Side*> mSides;
 
-	void PrintWallOrDoorNS(Side* side);
-	void PrintWallOrDoorOW(Side* side);
-	void PrintTwoWallParts();
-	void PrintSpaces();
+	//Prints a horizontal side
+	void PrintWallOrDoorNS(Side* side) const;
+	//Prints the sign of a vertical side
+	void PrintWallOrDoorOW(Side* side) const;
+	//Prints the parts of two parallel walls
+	void PrintTwoWallParts() const;
+	//Prints the Spaces between two vertical sides
+	void PrintSpaces() const;
 };
 
 #endif

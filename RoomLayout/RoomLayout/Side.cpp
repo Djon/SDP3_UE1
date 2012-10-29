@@ -1,20 +1,26 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : Side.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 29.10.2012
+// Description : Base functionality for wall and door
+// Remarks : -
+// Revision : 0
+///////////////////////////////////////////////////////////////////////////
+
+
 #include "Side.h"
 
-
-Side::Side()
-{
-}
 
 Side::~Side()
 {
 }
 
-Direction Side::getDirection()
+Direction Side::getDirection() const
 {
 	return mDirection;
 }
 
-bool Side::IsDoor()
+bool Side::IsDoor() const
 {
 	return mIsDoor;
 }

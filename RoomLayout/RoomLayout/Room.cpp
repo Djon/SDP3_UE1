@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : Room.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 29.10.2012
+// Description : Implements the class room
+// Remarks : -
+// Revision : 0
+///////////////////////////////////////////////////////////////////////////
+
+
 #include <algorithm>
 #include <iterator>
 #include <vector>
@@ -22,7 +32,7 @@ Room::~Room()
 	}
 }
 
-void Room::PrintWallOrDoorNS(Side* side) 
+void Room::PrintWallOrDoorNS(Side* side) const
 {
 	if (!side->IsDoor())
 	{
@@ -34,7 +44,7 @@ void Room::PrintWallOrDoorNS(Side* side)
 	}
 }
 
-void Room::PrintWallOrDoorOW(Side* side) 
+void Room::PrintWallOrDoorOW(Side* side) const
 {
 	if (!side->IsDoor())
 	{
@@ -46,19 +56,19 @@ void Room::PrintWallOrDoorOW(Side* side)
 	}
 }
 
-void Room::PrintTwoWallParts()
+void Room::PrintTwoWallParts() const
 {
 	std::cout << WallSign;
 	PrintSpaces();
 	std::cout << WallSign << std::endl;
 }
 
-void Room::PrintSpaces()
+void Room::PrintSpaces() const
 {
 	std::cout << SideSpaces;
 }
 
-void Room::Print(bool WasDoor) 
+void Room::Print(bool WasDoor) const
 {
 	try
 	{
@@ -145,12 +155,12 @@ bool Room::AddSide(Side* side)
 	}
 }
 
-bool Room::IsNorthDoor()
+bool Room::IsNorthDoor() const
 {
 	return mSides[0]->IsDoor();
 }
 
-bool Room::IsSouthDoor()
+bool Room::IsSouthDoor() const
 {
 	return mSides[MaxWalls-1]->IsDoor();
 }
@@ -161,17 +171,17 @@ void Room::AddRoomToDoor(Side* side)
 	door->AddRoom(this);
 }
 
-Side* Room::GetNorthSide()
+Side* Room::GetNorthSide() const
 {
 	return mSides[0];
 }
 
-Side* Room::GetSouthSide()
+Side* Room::GetSouthSide() const
 {
 	return mSides[MaxWalls-1];
 }
 
-bool Room::IsFull()
+bool Room::IsFull() const
 {
 	return mSides.size() == MaxWalls;
 }

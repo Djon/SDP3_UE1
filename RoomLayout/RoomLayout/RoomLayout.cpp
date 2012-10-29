@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////////////////
+// Workfile : RoomLayout.cpp
+// Author : Reinhard Penn, Bernhard Selymes
+// Date : 29.10.2012
+// Description : Implements the class RoomLayout
+// Remarks : -
+// Revision : 0
+///////////////////////////////////////////////////////////////////////////
+
+
 #include <iostream>
 #include <algorithm>
 #include <iterator>
@@ -21,12 +31,12 @@ RoomLayout::~RoomLayout()
 	}
 }
 
-void RoomLayout::PrintRoom(Room* room, bool WasDoor)
+void RoomLayout::PrintRoom(Room* room, bool WasDoor) const
 {
 	room->Print(WasDoor);
 }
 
-void RoomLayout::Print() 
+void RoomLayout::Print() const
 {
 	bool WasDoor = false;
 
