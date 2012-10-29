@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.29)  29 OCT 2012 18:47
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.29)  29 OCT 2012 21:10
 entering extended mode
 **Uebung01_Abgabe.tex
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\latexDoku\Uebung01_Abgabe.tex
@@ -747,46 +747,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[4] [5]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 171.
+[4]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 167.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Object.h
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 11.
 )
-[6]
+[5]
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Object.cpp)
-[7]
+[6]
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\RoomLayout.h
-) [8]
+) [7]
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\RoomLayout.c
-pp) [9]
-(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Room.h)
-[10]
+pp [8]) [9]
+(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Room.h
+[10]) [11]
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Room.cpp
-[11] [12]) [13]
+[12] [13] [14]) [15]
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Side.h)
-[14]
-(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Side.cpp)
-[15] (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Wall.h)
 [16]
-(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Wall.cpp)
-[17] (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Door.h)
+(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Side.cpp)
+[17] (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Wall.h)
 [18]
-(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Door.cpp)
-[19]
-(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Direction.h)
+(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Wall.cpp)
+[19] (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Door.h)
 [20]
-(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\main.cpp)
-[21] [22]
+(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Door.cpp)
+[21]
+(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\Direction.h)
+[22]
+(C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\RoomLayout\RoomLayout\main.cpp
+[23] [24] [25]) [26] [27]
 (C:\Users\Bernhard\Documents\GitHub\SDP3_UE1\latexDoku\Uebung01_Abgabe.aux) ) 
 Here is how much of TeX's memory you used:
  5045 strings out of 494045
- 68361 string characters out of 3145959
- 248223 words of memory out of 3000000
+ 68433 string characters out of 3145959
+ 269223 words of memory out of 3000000
  8246 multiletter control sequences out of 15000+200000
  14560 words of font info for 33 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -797,9 +797,9 @@ les (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/urw/times/utmr8a.pfb>
-Output written on Uebung01_Abgabe.pdf (22 pages, 87448 bytes).
+Output written on Uebung01_Abgabe.pdf (27 pages, 96788 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 106 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
