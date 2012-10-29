@@ -92,7 +92,7 @@ void testcase2()
 //Roomlayout with correct Rooms
 void testcase3()
 {
-	std::cout << "Testcase2: Roomlayout with correct rooms" << std::endl;
+	std::cout << "Testcase3: Roomlayout with correct rooms" << std::endl;
 
 	RoomLayout rl1;
 

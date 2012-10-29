@@ -90,7 +90,7 @@ Eine Software für einen Raumplan soll entwickelt werden. Ein Raumplan enthält 
 
 \subsection {Klassendiagramm}
 
-\includegraphics[angle=90] {../Klassendiagramm.png}
+%\includegraphics[angle=90] {../Klassendiagramm.png}
 
 
 \subsection {Komponentenübersicht}
@@ -207,7 +207,47 @@ Fügt zum Durchgang einen Raum hinzu, wenn noch nicht die maximale Anzahl der R�
 \section {Testausgaben} 
 
 \begin {verbatim}
+Testcase0: Empty roomlayout
 
+
+Testcase1: Roomlayout with empty rooms
+Error occured in RoomLayout::AddRoom: Room is not full
+Error occured in RoomLayout::AddRoom: Room is not full
+
+
+Testcase2: Roomlayout with wrong rooms
+*********
+*       *
+*       D
+*       *
+****D****
+
+
+Testcase3: Roomlayout with correct rooms
+*********
+*       *
+*       D
+*       *
+****D****
+*       *
+*       D
+*       *
+****D****
+
+
+Testcase4: Roomlayout with correct rooms.
+Trying to add a fifth side to one room
+Error occured in Room::AddSide: Max amount of walls already reached
+*********
+*       *
+*       D
+*       *
+*********
+*********
+*       *
+*       D
+*       *
+****D****
 \end {verbatim}
 
 
