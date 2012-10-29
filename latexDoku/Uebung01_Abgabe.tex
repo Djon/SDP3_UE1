@@ -16,6 +16,8 @@
 
 \usepackage{listings}
 \usepackage{color}
+
+\usepackage{graphicx}
  
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -58,13 +60,14 @@ commentstyle=\color{dkgreen},       % comment style
 			\begin {itemize}
 				\item Planung
 				\item Klassendiagramm
-				\item Implementierung und Testen der Klassen Side, Wall, Door				
+				\item Implementierung der Klassen Object, Roomlayout, Room, Side, Wall, Door
+				\item Testen aller Klassen		
 			\end {itemize}
 		\item Bernhard Selymes
 			\begin {itemize}
 				\item Planung
 				\item Klassendiagramm
-				\item Implementierung und Testen der Klassen Object, Roomlayout, Room
+				\item Implementierung der Klassen Object, Roomlayout, Room, Side, Wall, Door
 				\item Dokumentation				
 			\end {itemize}
 	\end {itemize}
@@ -87,7 +90,7 @@ Eine Software für einen Raumplan soll entwickelt werden. Ein Raumplan enthält 
 
 \subsection {Klassendiagramm}
 
-%bmp oder pdf einfügen !
+\includegraphics[angle=90] {../Klassendiagramm.png}
 
 
 \subsection {Komponentenübersicht}
@@ -119,7 +122,7 @@ Eine Software für einen Raumplan soll entwickelt werden. Ein Raumplan enthält 
 \newpage
 \section {Komponentenentwurf}
 \subsection {Klasse "Object"}
-Abstrakte Basisklasse aller Klassen. Von ihr werden alle anderen Klassen abgeleitet. Beinhaltet einen virtuelle Dekonstruktor.
+Abstrakte Basisklasse aller Klassen. Von ihr werden alle anderen Klassen abgeleitet. Beinhaltet einen virtuellen Destruktor.
 
 \subsection {Klasse "RoomLayout"}
 Besitzt eine Liste die Zeiger auf die Klasse Room beinhaltet, einen Zeiger, der auf den vorherigen Raum zeigt und einen Wahrheitswert, der angibt ob im letzten Raum im Süden ein Durchgang war. \\
