@@ -87,7 +87,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="4eeec8b8-c2b2-42a9-bf37-4fda2a763ac4" name="Room Layout" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="4eeec8b8-c2b2-42a9-bf37-4fda2a763ac4" name="Room Layout" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="0e6ec859-5a10-4542-a6d7-bd54dcade58c" />
         <generalsInternal>
           <generalization Id="fc472cbb-b369-40db-94ab-a57f6ca65038" isSubstitutable="false">
@@ -130,16 +130,28 @@
               <referencedTypeMoniker Id="01bd2a77-51f0-4b47-be59-81c335aaeb97" LastKnownName="list&lt;Room*&gt;" />
             </type_NamedElement>
           </property>
+          <property Id="4422b42e-5579-4661-8f1b-5ca4010996d1" name="prevRoom" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4a612af0-85e8-4a8a-a672-be4e3ebca5d5" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="374ca562-9bb7-4ddb-81d8-4a5312998699" LastKnownName="Room*" />
+            </type_NamedElement>
+          </property>
+          <property Id="c8426947-87ff-4bb2-8067-ae071f4d3b3e" name="mWasDoor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="99033b47-ae55-4f59-a187-10d8623d203e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="c51d5451-8fc2-4065-a163-02f0e2a0ff58" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="004bcfa7-a52d-42a5-ac7f-362d8e409e49" name="Print" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="004bcfa7-a52d-42a5-ac7f-362d8e409e49" name="Print" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="57ad4af8-a2a5-4f13-bc28-a34e8794e121" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="302ef995-7e79-4262-bd8d-9a355450ef43" direction="Return" isUnique="false">
-                  <elementDefinition Id="641f53b1-858f-4cd3-b1c3-3e8e84484ce8" />
+                <parameter Id="92f28aeb-aa80-4c67-8952-4e22393376f2" direction="Return" isUnique="false">
+                  <elementDefinition Id="1758b48a-0cd9-47e7-9b65-83f8e320cb08" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="58aebde7-d294-4ae0-9726-cd73502c21a2" LastKnownName="void" />
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -152,13 +164,42 @@
                 <parameter Id="77ab3c11-dcce-4904-89ec-c00ca9f267f2" direction="Return" isUnique="false">
                   <elementDefinition Id="8e4634da-6e24-4dda-9efa-93d0ee54d006" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                    <referencedTypeMoniker Id="c51d5451-8fc2-4065-a163-02f0e2a0ff58" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e5756218-6eab-4c8c-8b06-119a641ba9a7" name="Room*" direction="In" isUnique="false">
-                  <elementDefinition Id="8fb90045-a87f-4abb-b76b-294ac0806d1f" />
+                <parameter Id="e284c413-e0c7-48c2-be49-597642e74dd5" name="Room*" direction="In" isUnique="false">
+                  <elementDefinition Id="3b520292-5ac8-40f5-b887-deff0a81fbe4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="7bd502d9-5641-4681-b300-1bac9bdb1e0d" name="~RoomLayout" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="64b763f8-bae9-44a6-93be-42f6d2672d0c" />
+          </operation>
+          <operation Id="bff2c1cf-e369-41d6-8234-1400baba9ce8" name="RoomLayout" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3ee8a006-c099-4a21-bfd8-52a0588b2266" />
+          </operation>
+          <operation Id="8f751079-46da-4535-9e99-6ab76559706c" name="PrintRoom" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2ae6b7fc-e01c-41f0-beb7-c047d7dc4a8a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d0343908-e223-4a8e-8ae9-84843dd2aded" name="Room*" direction="In" isUnique="false">
+                  <elementDefinition Id="5f46e9c3-49ea-493a-a0a4-344512f17dbb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e3baeac-415c-483b-b164-c5aac83dd4df" name="bool" direction="In" isUnique="false">
+                  <elementDefinition Id="a1e0bffa-82da-4dce-abc6-632d5a9923a4" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="490085fa-22ab-4a97-a905-542311caef13" direction="Return" isUnique="false">
+                  <elementDefinition Id="f02da1ee-b417-4d30-b89d-491c4bea2aca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -167,7 +208,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="9352756b-7b98-4a06-9cc5-a32c4b9fc5ca" name="Room" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="9352756b-7b98-4a06-9cc5-a32c4b9fc5ca" name="Room" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="ed8bef65-2ba4-4124-bccc-971a222b50d0" />
         <generalsInternal>
           <generalization Id="b22d41d4-71f0-48b6-916e-13e991199e8f" isSubstitutable="false">
@@ -222,15 +263,20 @@
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
-          <operation Id="a6a4d30a-8ebb-49aa-845c-3d27184b98eb" name="Print" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="a6a4d30a-8ebb-49aa-845c-3d27184b98eb" name="Print" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="566f4759-a1f9-4d8b-aae1-c110545d1094" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="10da70ab-1fb3-4ff8-ae75-5eefee08208d" direction="Return" isUnique="false">
-                  <elementDefinition Id="ac90de03-acea-4b65-aca4-3f08a66661a1" />
+                <parameter Id="5cd854b6-79b8-473b-9ebd-c64309e3ab6d" direction="Return" isUnique="false">
+                  <elementDefinition Id="13327cee-1d3d-499a-b1d0-69dd0cc6d3fb" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="94897b39-bb2a-450d-908f-bc8dfe04cd34" name="bool" direction="In" isUnique="false">
+                  <elementDefinition Id="443ed2d4-0c3a-4b83-be88-f8e1877f4c0e" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -253,11 +299,162 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="1f0bfde4-a85d-443d-aa99-61c003b9f609" name="~Room" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7e198928-d7ae-4fdb-a7cd-b1600fd995b3" />
+          </operation>
+          <operation Id="759a69ca-b135-4c3b-8896-c00f653abb79" name="Room" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="46dbefa5-1d33-4813-a7e5-1c48802ea431" />
+          </operation>
+          <operation Id="0c8503a6-61fb-4db1-b1c7-f26624e31f35" name="AddRoomToDoor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="af332341-d270-473a-93f1-ed3894c6f881" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="552041a9-6e5a-4eb4-a5ad-549a30731ac6" name="Side*" direction="In" isUnique="false">
+                  <elementDefinition Id="f81a148a-4b49-429a-b20d-2a7eb9e96176" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a46f7429-fa09-4d14-b690-45da306173c6" direction="Return" isUnique="false">
+                  <elementDefinition Id="ccb9cb84-94bf-4f31-aa81-2e083f6a8e55" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5d8c5817-10e9-4e7d-9aed-e9eaf94434b6" name="IsFull" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9fb0574b-4fea-4406-89fc-203953ad9e6b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="05663b73-deff-4981-9fa0-ca4731a52174" name=")" direction="In" isUnique="false">
+                  <elementDefinition Id="a888a982-a693-450b-88be-6a949df167a3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ad11923d-5029-4924-ace7-82ae9d4983e2" LastKnownName="bool(" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1919854b-744f-471a-aa17-bf6e7f33b5a3" name="IsNorthDoor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e9f6af78-52b6-49af-a5c5-9d23f89d7a42" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c741ef2e-7996-4b78-bedf-27780824a913" direction="Return" isUnique="false">
+                  <elementDefinition Id="892698cd-7c01-4bb5-8021-28a7e0d7752e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c51d5451-8fc2-4065-a163-02f0e2a0ff58" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b6174799-bb8a-4504-a19b-ad374441bdfe" name="IsSouthDoor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="514bf7bb-a817-42bb-8428-4387f6898669" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="29803941-698f-4627-b159-fb32c4fe694d" direction="Return" isUnique="false">
+                  <elementDefinition Id="b7d65b50-c4cb-456c-8b40-82517bbe908d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c51d5451-8fc2-4065-a163-02f0e2a0ff58" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="807fbbfc-3bb4-42c7-83d1-6c28a6aa0fe6" name="GetNorthSide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a5e440af-2ed5-4319-ba0f-7318c5d1a053" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="33da7fb2-e29d-4d45-8273-8b9f16d8e264" direction="Return" isUnique="false">
+                  <elementDefinition Id="5eba32c6-81bd-4fec-ac84-37ff5519029e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="90684a56-bb64-40c7-9051-6bf11d86a3ac" LastKnownName="Side*" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="af2ac789-cd25-4dd8-b525-9260e820797b" name="GetSouthSide" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="52cfbbdb-4f83-4ffe-b88b-82a75eef4c74" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e15fb416-726d-432d-93b9-d382d7bf2ecd" direction="Return" isUnique="false">
+                  <elementDefinition Id="bbb07aa5-6c19-47e3-8a8a-ef9ba8b7cb5d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="90684a56-bb64-40c7-9051-6bf11d86a3ac" LastKnownName="Side*" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0760d8cb-b29a-4c4a-833a-8b4b07ff9ae5" name="PrintWallOrDoorNS" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7fd67b84-de66-4ece-a80a-9ceb98654f96" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="95f1a0e9-287e-4da1-bf3e-343dc4d101b5" name="Side*" direction="In" isUnique="false">
+                  <elementDefinition Id="9eb68a0e-1177-40fd-8c19-b33b7cc0a56d" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6bf537e7-7cc9-42b7-bf7a-675a26d54150" direction="Return" isUnique="false">
+                  <elementDefinition Id="53797125-b09d-4cd4-b405-0e091cf535d2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5399a5df-981f-4cd4-a7cd-c5c8ce0b58b1" name="PrintWallOrDoorOW" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e3467724-9117-4185-85f6-9926cb795f93" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b9eb0487-2849-45c9-b3c7-9964f6c7c142" name="Side*" direction="In" isUnique="false">
+                  <elementDefinition Id="d047d17d-fd85-498a-9634-a601782c514d" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="86bfdace-aa5d-4864-9cca-c27aaf5b9982" direction="Return" isUnique="false">
+                  <elementDefinition Id="ea9bc0fd-8be0-4bd3-bf94-9e73b9ec991d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3796d501-173c-4220-8b39-a3ef46eec3ee" name="PrintTwoWallParts" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="457d0af5-6bf3-48c7-aa73-3e8d489e3b0b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="75cb2b79-9a4f-4574-a4e6-a9ab885c48d5" direction="Return" isUnique="false">
+                  <elementDefinition Id="195bd4a4-747c-43fe-892a-ed37e291e4e9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5a2bb2fd-8116-434c-83db-59e2abdd0f7a" name="PrintSpaces" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9abfca2d-7ebe-4cba-986d-ee1b6386c021" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="44085a48-5318-4f84-8bd3-c360dd80c9d4" direction="Return" isUnique="false">
+                  <elementDefinition Id="5069ba4b-245c-4920-b1c9-d02f35f081ee" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="09394606-2722-4a63-ac5a-2961db535446" name="Wall" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="09394606-2722-4a63-ac5a-2961db535446" name="Wall" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="07f66a4b-f00b-4b2b-ad30-621501ba3525" />
         <generalsInternal>
           <generalization Id="32377d15-85cf-478d-a679-b56a1cb4747b" isSubstitutable="false">
@@ -316,10 +513,30 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="e46795fb-c2a2-45b9-8cfe-bd78fc9b248b" name="~Wall" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="780e7806-bd5e-4424-ab5d-e3da68a49574" />
+          </operation>
+          <operation Id="5bea6443-1be9-4f08-a9e0-9ff1234dac5c" name="Wall" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2508edef-5e7f-4953-9429-d6eff07c041d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a39eb920-e905-41ce-bca5-d400217d999e" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="023636cf-fc93-4954-b9a9-f1549b623905" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f24cba15-32a4-411e-ad74-d07395aa7394" name="Direction" direction="In" isUnique="false">
+                  <elementDefinition Id="cc46b27f-d680-48d0-b9fc-83c1a3a087c6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="109c6b67-5c8c-41ad-a5c6-1db01c4d88f6" name="Side" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="109c6b67-5c8c-41ad-a5c6-1db01c4d88f6" name="Side" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="75abdf32-eb13-4cf8-b14b-0080e3e9326c" />
         <suppliersInternal>
           <dependency Id="91fb65cf-7e2d-411e-ba48-9d17cc143c25">
@@ -340,17 +557,48 @@
               <referencedTypeMoniker Id="3bbd1729-c007-4bce-8ce0-0f29619946df" LastKnownName="Direction" />
             </type_NamedElement>
           </property>
-          <property Id="34b78200-c89e-45d4-97aa-f89202a0f338" name="mIsDoor" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="34b78200-c89e-45d4-97aa-f89202a0f338" name="mIsDoor" visibility="Protected" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7077cbdb-4c24-4d52-92a2-9d2a5046ea14" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="ef643ad5-0dbb-4ff1-970e-ddda76ec040b" LastKnownName="bool" />
+              <referencedTypeMoniker Id="74e370ec-c1d1-4329-81c7-6726fdd5a707" LastKnownName="bool" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="255e491f-1f8e-4465-8821-35b23614370c" name="~Side" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d5a7a734-0dad-471b-8eb2-9d3092ab97c2" />
+          </operation>
+          <operation Id="f27c28d4-e3e9-42a7-af58-079ea1801de2" name="IsDoor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a00e18b8-b7eb-4270-925d-b327e14b0834" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="105d5d4b-cc12-4a0d-ac8c-9a3185a03911" direction="Return" isUnique="false">
+                  <elementDefinition Id="49df3ab4-18ff-45fc-abec-643de7f1e31b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c51d5451-8fc2-4065-a163-02f0e2a0ff58" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="74c5199e-0df1-447e-9ed3-155db4cc63d8" name="getDirection" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9b1b02b9-c4d3-4157-9d75-b243c84c6258" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7e164088-7332-4c96-8c83-20b8b4ef3a50" direction="Return" isUnique="false">
+                  <elementDefinition Id="6625c0f3-cfa0-4c27-bd7c-309f560ec4da" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4bfd5165-13a8-492a-81fc-640aa7e57320" LastKnownName="Direction" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="fc95eeb0-f905-4c83-9a24-6fcb981f0382" name="Door" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="fc95eeb0-f905-4c83-9a24-6fcb981f0382" name="Door" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="7dac2ba6-476c-434a-b658-c210c97fb024" />
         <generalsInternal>
           <generalization Id="a5bb10b7-5472-4c4a-b881-00eebde9276d" isSubstitutable="false">
@@ -400,6 +648,39 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a0de6d55-4889-43b8-8074-642663a49acf" name="AddRoom" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="668dc2b2-76eb-4a01-824b-f7dde770595f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d8cee882-a10e-4139-9280-a057c2051e5b" direction="Return" isUnique="false">
+                  <elementDefinition Id="dcd8391c-8594-4722-8067-b64ac2ffc9eb" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c8a295bb-9d96-4ed4-90c3-ce1ebddd49e2" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="409439aa-5422-4b9f-8b5b-ebcde51a0606" name="Door" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f6a1388e-8b81-446a-a809-4ac29dccb4a7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8bdbbc4d-3ab0-473f-a70a-f95c0802f284" name="bool" direction="In" isUnique="false">
+                  <elementDefinition Id="c2668ae4-b1ea-4136-8ceb-aae5f9b480c5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f99e6306-e5de-4159-a29e-72075630d65e" name="Direction" direction="In" isUnique="false">
+                  <elementDefinition Id="dcc8681f-365b-4210-8c2d-52f9bcfdaf20" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1b864209-4b45-4057-a83f-ab5fb6876d7f" name="~Door" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="47552fdd-66c5-4b49-b564-ed47694f6522" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -442,11 +723,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="58aebde7-d294-4ae0-9726-cd73502c21a2" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
-        <elementDefinition Id="6d65e268-24ca-4c86-a522-0ee7313426b1" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="01bd2a77-51f0-4b47-be59-81c335aaeb97" name="list&lt;Room*&gt;" isAbstract="false" isLeaf="false" cachedFullName="list&lt;Room*&gt;">
         <elementDefinition Id="f5503a52-02e2-46f3-8485-15cc55a13d66" />
       </referencedType>
@@ -462,8 +738,28 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="ef643ad5-0dbb-4ff1-970e-ddda76ec040b" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+      <referencedType Id="74e370ec-c1d1-4329-81c7-6726fdd5a707" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="4f4de915-6cdd-4e73-afd6-191b6151cdb3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="374ca562-9bb7-4ddb-81d8-4a5312998699" name="Room*" isAbstract="false" isLeaf="false" cachedFullName="Room*">
+        <elementDefinition Id="9249b709-887f-4349-a41e-bbc53b49e1d7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4bfd5165-13a8-492a-81fc-640aa7e57320" name="Direction" isAbstract="false" isLeaf="false" cachedFullName="ClassDiagram_UE1::Direction">
+        <elementDefinition Id="b39bebc0-f3b5-435b-bce7-f47733de14e1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ad11923d-5029-4924-ace7-82ae9d4983e2" name="bool(" isAbstract="false" isLeaf="false" cachedFullName="bool(">
+        <elementDefinition Id="6a302be5-68c1-499d-a263-c0dd3940aa35" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="90684a56-bb64-40c7-9051-6bf11d86a3ac" name="Side*" isAbstract="false" isLeaf="false" cachedFullName="Side*">
+        <elementDefinition Id="427297ae-5f1c-4737-b4a1-ea5921c77fa8" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
